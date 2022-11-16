@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:micro_core/app/micro_core_utils.dart';
 
 class SplashPage extends StatefulWidget {

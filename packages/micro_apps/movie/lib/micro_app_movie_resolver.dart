@@ -1,3 +1,5 @@
+import 'package:eventbus/eventbus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:micro_core/micro_core.dart';
 import 'package:movie/app/core/inject/inject.dart';
 import 'package:movie/app/features/movie/presentation/ui/pages/home_page.dart';
@@ -13,4 +15,15 @@ class MicroAppMovieResolver implements MicroApp {
 
   @override
   void Function() get injectionsRegister => Inject.initialize;
+
+  @override
+  void Function() get createListener => () {
+        EventBus.listen(
+          (event) {
+            if (kDebugMode) {
+              print(event);
+            }
+          },
+        );
+      };
 }

@@ -13,4 +13,7 @@ class MicroAppLoginResolver implements MicroApp {
   Map<String, WidgetBuilderArgs> get routes => {
         '/login': (_, __) => const AuthenticatorPage(),
       };
+
+  @override
+  void Function() get createListener => () {};
 }
